@@ -1,0 +1,37 @@
+import math  
+import stdio 
+import stdarray
+import random 
+import stddraw
+import color
+import picture
+import sys
+from Interface import start_menu
+from player import Player
+
+def main() -> None:
+    idle = True
+    stddraw.setCanvasSize(1000,1000)
+    stddraw.setYscale(0,1000)
+    stddraw.setXscale(0,1000)
+
+    p = Player(500, 45, 35, 10)
+
+    while idle:
+        start_menu()
+        stddraw.show(16)
+        if stddraw.hasNextKeyTyped():
+            key = stddraw.nextKeyTyped()
+            if key == "x" or key == "X":
+                sys.exit()               
+            else:
+                idle = False  
+
+    while True:
+        stddraw.clear()
+        p.update()
+        p.draw()
+        stddraw.show(16)
+        
+if __name__ == "__main__":
+    main()
