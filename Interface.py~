@@ -1,0 +1,72 @@
+import stddraw
+import picture
+
+#i searched for non-copyrighted pixilated images of stars then used the picture lib and made a variable with the picture assigned to it from the assets folder,
+
+bg = picture.Picture("ASSETS/backround_moving.jpg")
+
+def start_menu():
+    stddraw.picture(bg, 500, 500, 1000, 1000)
+    stddraw.setFontSize(100)
+    stddraw.setPenColor(stddraw.GREEN)
+    stddraw.text(500, 900, "GALACTIC INTRUDERS")
+    stddraw.setFontSize(45)
+    stddraw.setPenColor(stddraw.RED)
+    stddraw.text(500, 700, "INSTRUCTIONS:")
+    stddraw.setFontSize(40)
+    stddraw.text(500, 530, "Move Left:[A]  Move Right:[D]  Stop Moving:[S]")
+    stddraw.text(500, 460, "Rotate Left:[E]  Rotate Right:[E]  Stop Rotating:[W]")
+    stddraw.text(500, 390, "SHOOT:[SPACE]")
+    stddraw.text(500, 320, "Exit:[ESC]")
+    stddraw.setFontSize(60)
+    stddraw.text(500, 170, "PRESS any key to start...")
+
+
+
+
+def WinOrLoseOrLevelUp(level, score,Lose):
+    if Lose == True:
+        stddraw.clear(stddraw.RED)
+        stddraw.setFontSize(100)
+        stddraw.setPenColor(stddraw.BLACK)
+        stddraw.text(500,900,"YOU LOSE :(")
+        stddraw.setFontSize(75)
+        stddraw.text(500,700,"Better Luck Next Time!")
+        stddraw.setFontSize(40)
+        stddraw.text(500,650,"Score: " + str(score))
+        stddraw.text(500,600,"Level: " + str(level))
+        stddraw.setFontSize(60)
+        stddraw.text(500,400,"PLAY AGAIN: [SPACE]")
+        stddraw.text(500,300,"LEAVE: [ESC]")
+    
+
+
+
+    if Lose == False:
+        stddraw.clear(stddraw.GREEN)
+        stddraw.setFontSize(100)
+        stddraw.setPenColor(stddraw.BLACK)
+        stddraw.text(500,900,"NEXT LEVEL :)")
+        stddraw.setFontSize(75)
+        stddraw.text(500,700,"GOOD LUCK, KEEP PUSHING!")
+        stddraw.setFontSize(40)
+        stddraw.text(500,550,"Score: " + str(score))
+        stddraw.text(500,500,"Level: " + str(level))
+        stddraw.setFontSize(60)
+        stddraw.text(500,400,"CONTINUE: [SPACE]")
+        stddraw.text(500,300,"LEAVE: [ESC]")
+    
+
+
+
+def exiting():
+    stddraw.clear(stddraw.BLACK)
+    stddraw.setFontSize(75)
+    stddraw.setPenColor(stddraw.GREEN)
+    stddraw.text(500,500,"Tying up loose ends....")
+        
+
+
+
+
+

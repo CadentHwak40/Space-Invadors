@@ -1,0 +1,29 @@
+import sys 
+import stddraw
+import math 
+import stdarray
+
+class Enemy:
+    def __init__(self,x,y,speed,radius):
+        self.x = x
+        self.y = y
+        self. radius = radius 
+        self.alive = True
+        self.speed = speed
+
+
+    def move_left(self):
+        self.x -= self.speed
+
+    def move_right(self):
+        self.x += self.speed
+
+    def move_down(self):
+        self.y -= 15
+
+    def draw(self):
+        stddraw.setPenColor(stddraw.RED)
+        stddraw.filledCircle(self.x, self.y, self.radius)
+        
+
+

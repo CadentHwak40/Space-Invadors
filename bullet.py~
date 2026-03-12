@@ -1,0 +1,29 @@
+import math
+import stddraw
+import sys
+
+
+class Bullet:
+    def __init__(self,x,y,angle):
+        self.x = x 
+        self.y = y 
+        self.speed = 15 
+        self.live = True
+        self.angle = angle
+        self.Reload = 0 
+
+    def update(self):
+        if self.Reload > 0:
+            self.Reload -= 1
+        self.x += math.cos(self.angle) * self.speed
+        self.y += math.sin(self.angle) * self.speed
+        if self.x > 1000 or self.y >1000 or self.x < 0:
+            self.live = False
+
+    def draw(self):
+        stddraw.setPenColor(stddraw.ORANGE)
+        stddraw.setPenRadius(2)
+        stddraw.filledCircle(self.x,self.y,2)
+        stddraw.setPenRadius(1)
+        
+
